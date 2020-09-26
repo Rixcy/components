@@ -1,24 +1,52 @@
 {
-	"name": "@rixcy/components",
-	"version": "1.0.0",
-	"description": "",
-	"keywords": [],
-	"homepage": "https://github.com/Rixcy/components#readme",
-	"bugs": {
-		"url": "https://github.com/Rixcy/components/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Rixcy/components.git"
-	},
-	"license": "MIT",
-	"author": "Rick Booth",
-	"main": "index.js",
-	"scripts": {
-		"sort": "sort-package-json",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"devDependencies": {
-		"sort-package-json": "^1.46.0"
-	}
+    "name": "@rixcy/components",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "homepage": "https://github.com/Rixcy/components#readme",
+    "bugs": {
+        "url": "https://github.com/Rixcy/components/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Rixcy/components.git"
+    },
+    "license": "MIT",
+    "author": "Rick Booth",
+    "main": "index.js",
+    "scripts": {
+        "commit": "git-cz",
+        "lint": "npx prettier --write .",
+        "sort": "sort-package-json",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "lint-staged": {
+        "**/*.{md,yml,json,babelrc,eslintrc,prettierrc}": [
+            "npx prettier --write"
+        ],
+        "**/*.{ts,tsx,js,jsx}": [
+            "npx prettier --write"
+        ]
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "commitizen": "^4.2.1",
+        "cz-conventional-changelog": "^3.3.0",
+        "husky": "^4.3.0",
+        "lint-staged": "^10.4.0",
+        "prettier": "^2.1.2",
+        "sort-package-json": "^1.46.0"
+    }
 }
