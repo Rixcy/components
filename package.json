@@ -1,0 +1,24 @@
+{
+	"name": "@rixcy/components",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"homepage": "https://github.com/Rixcy/components#readme",
+	"bugs": {
+		"url": "https://github.com/Rixcy/components/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Rixcy/components.git"
+	},
+	"license": "MIT",
+	"author": "Rick Booth",
+	"main": "index.js",
+	"scripts": {
+		"sort": "sort-package-json",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"sort-package-json": "^1.46.0"
+	}
+}
