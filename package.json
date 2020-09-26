@@ -13,22 +13,21 @@
     },
     "license": "MIT",
     "author": "Rixcy",
-    "main": "dist/index.js",
-    "unpkg": "dist/index.iife.js",
-    "module": "dist/index.esm.js",
-    "browser": "dist/index.iife.js",
+    "main": "dist/index.min.js",
+    "unpkg": "dist/index.iife.min.js",
+    "module": "dist/index.esm.min.js",
+    "browser": "dist/index.iife.min.js",
+    "types": "dist/index.d.ts",
+    "typings": "dist/index.d.ts",
     "files": [
         "dist"
     ],
     "scripts": {
         "prebuild": "npx rimraf dist",
-        "build": "concurrently yarn:build:*",
-        "build:cjs": "npx esbuild --minify --bundle --outfile=dist/index.js --format=cjs src/index.ts",
-        "build:esm": "npx esbuild --minify --bundle --outfile=dist/index.esm.js --format=esm src/index.ts",
-        "build:iife": "npx esbuild --minify --bundle --outfile=dist/index.iife.js --format=iife src/index.ts",
-        "build:types": "tsc --emitDeclarationOnly --declaration --declarationMap --declarationDir dist",
+        "build": "bili",
         "commit": "git-cz",
         "lint": "npx prettier --write .",
+        "old-build": "concurrently yarn:build:*",
         "prepublishOnly": "yarn build && pkg-ok",
         "release": "release-it",
         "sort": "sort-package-json",
@@ -59,16 +58,18 @@
     },
     "dependencies": {
         "react": "^16.13.1",
-        "react-icons": "^3.11.0"
+        "react-icons": "^3.11.0",
+        "tailwindcss": "^1.8.10"
     },
     "devDependencies": {
         "@commitlint/cli": "^11.0.0",
         "@commitlint/config-conventional": "^11.0.0",
         "@types/react": "^16.9.49",
+        "autoprefixer": "^9.8.6",
+        "bili": "^5.0.5",
         "commitizen": "^4.2.1",
         "concurrently": "^5.3.0",
         "cz-conventional-changelog": "^3.3.0",
-        "esbuild": "^0.7.6",
         "git-cz": "^4.7.1",
         "husky": "^4.3.0",
         "lint-staged": "^10.4.0",
@@ -77,12 +78,20 @@
         "prettier": "^2.1.2",
         "release-it": "^14.0.3",
         "rimraf": "^3.0.2",
+        "rollup-plugin-typescript2": "^0.27.3",
         "sort-package-json": "^1.46.0",
         "typescript": "^4.0.3"
+    },
+    "publishConfig": {
+        "access": "public"
     },
     "release-it": {
         "git": {
             "commitMessage": "chore: release v${version}"
+        },
+        "npm": {
+            "publish": true,
+            "skipChecks": true
         }
     }
 }
