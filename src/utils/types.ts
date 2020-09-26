@@ -1,0 +1,11 @@
+export type ColourVariant =
+    | 'blue'
+    | 'gray'
+    | 'green'
+    | 'indigo'
+    | 'orange'
+    | 'pink'
+    | 'purple'
+    | 'red'
+    | 'teal'
+    | 'yellow'
