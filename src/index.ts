@@ -1,6 +1,7 @@
 export * from './Alert'
 export * from './Button'
 export * from './Pagination'
+export * from './Menu'
 export * from './Navbar'
 export * from './ProgressBar'
 export * from './SimpleFooter'
