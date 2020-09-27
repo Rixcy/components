@@ -1,5 +1,6 @@
 export * from './Alert'
 export * from './Button'
+export * from './Hero'
 export * from './Image'
 export * from './Input'
 export * from './Label'
