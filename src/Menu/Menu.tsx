@@ -1,5 +1,5 @@
 import React from 'react'
-import { ColourVariant } from '../../utils'
+import { ColourVariant } from '../utils'
 
 export type MenuProps = {
     /** choose a variant for the button */

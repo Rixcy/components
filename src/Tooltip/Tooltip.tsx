@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Popper, { Position } from 'popper.js'
-import { ColourVariant } from '../../utils'
+import { ColourVariant } from '../utils'
 
 export type TooltipProps = {
     buttonText?: React.ReactNode
@@ -13,8 +13,8 @@ export type TooltipProps = {
 export const Tooltip = (props: TooltipProps) => {
     const { buttonText, content, position, title, variant } = props
     const [tooltipShow, setTooltipShow] = React.useState(false)
-    const btnRef = React.createRef<HTMLButtonElement>()
-    const tooltipRef = React.createRef<HTMLDivElement>()
+    const btnRef = useRef<HTMLButtonElement>(null!)
+    const tooltipRef = useRef<HTMLDivElement>(null!)
     const openLeftTooltip = () => {
         new Popper(btnRef.current, tooltipRef.current, {
             placement: position,

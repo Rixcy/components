@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faChartBar } from '@fortawesome/free-solid-svg-icons'
-import { ColourVariant } from '../../../utils'
+import { ColourVariant } from '../../utils'
 
 export type BlockProps = {
     title?: string
@@ -49,7 +49,7 @@ export const BlockIcon: React.FC<BlockIconProps> = (props) => {
             <div
                 className={`text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-${variant}-500`}
             >
-                <FontAwesomeIcon {...iconProps} />
+                {iconProps && <FontAwesomeIcon {...iconProps} />}
             </div>
         </div>
     )
@@ -74,7 +74,7 @@ export const BlockDifference: React.FC<BlockDifferenceProps> = (props) => {
     return (
         <p className="text-sm text-gray-500 mt-4">
             <span className={`text-${statisticColour}-500 mr-2`}>
-                <FontAwesomeIcon {...iconProps} />
+                {iconProps && <FontAwesomeIcon {...iconProps} />}
                 {statistic}
             </span>
             <span className="whitespace-no-wrap">{statisticText}</span>

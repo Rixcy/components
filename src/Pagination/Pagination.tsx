@@ -1,9 +1,7 @@
 import React from 'react'
-import { ColourVariant } from '../../utils'
-import times from 'lodash/times'
+import { ColourVariant } from '../utils'
 import classNames from 'classnames'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import omit from 'lodash/omit'
 
 export type PaginationProps = {
     /** choose a variant for the pagination */
@@ -96,7 +94,9 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
                             <li key={index}>
                                 <a
                                     href={href}
-                                    onClick={(e) => (disabled ? e.preventDefault() : onClick(e))}
+                                    onClick={(e) =>
+                                        onClick && (disabled ? e.preventDefault() : onClick(e))
+                                    }
                                     className={itemClasses({ active, disabled })}
                                     {...itemProps}
                                 >

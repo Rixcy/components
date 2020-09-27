@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Popper from 'popper.js'
-import { ColourVariant } from '../../utils'
 
 export type DropdownProps = {
     items?: DropdownItem[]
@@ -12,8 +11,8 @@ export const Dropdown = (props: DropdownProps) => {
     const { items } = props
     // dropdown props
     const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false)
-    const btnDropdownRef = React.createRef<HTMLButtonElement>()
-    const popoverDropdownRef = React.createRef<HTMLDivElement>()
+    const btnDropdownRef = useRef<HTMLButtonElement>(null!)
+    const popoverDropdownRef = React.useRef<HTMLDivElement>(null!)
     const openDropdownPopover = () => {
         new Popper(btnDropdownRef.current, popoverDropdownRef.current, {
             placement: 'bottom-start',
@@ -49,7 +48,7 @@ export const Dropdown = (props: DropdownProps) => {
                             }
                             style={{ minWidth: '12rem' }}
                         >
-                            {items.map((item, index) => (
+                            {items?.map((item, index) => (
                                 <a
                                     key={index}
                                     className={

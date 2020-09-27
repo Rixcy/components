@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                             <h5 className="text-lg mt-0 mb-2 text-gray-700">{leadingText}</h5>
                         )}
                         <div className="mt-6">
-                            {socials.map((social, index) => (
+                            {socials?.map((social, index) => (
                                 <a
                                     key={index}
                                     href={social.linkProps?.href || '#'}
@@ -63,14 +63,14 @@ export const Footer: React.FC<FooterProps> = (props) => {
                                     } shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center leading-none`}
                                     {...social.linkProps}
                                 >
-                                    <FontAwesomeIcon {...social.iconProps} />
+                                    {social.iconProps && <FontAwesomeIcon {...social.iconProps} />}
                                 </a>
                             ))}
                         </div>
                     </div>
                     <div className="w-full md:w-6/12 px-4">
                         <div className="flex flex-wrap items-top mb-6">
-                            {columns.map((column, index) => (
+                            {columns?.map((column, index) => (
                                 <div
                                     key={index}
                                     className="w-full md:w-6/12 xl:w-4/12 pt-6 md:pt-0 md:px-4 ml-auto"
@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                                         {column.heading}
                                     </span>
                                     <ul className="list-unstyled">
-                                        {column.items.map((item, index) => (
+                                        {column.items?.map((item, index) => (
                                             <li key={index}>
                                                 <a
                                                     className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"

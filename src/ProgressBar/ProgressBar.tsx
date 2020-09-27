@@ -1,5 +1,5 @@
 import React from 'react'
-import { ColourVariant } from '../../utils'
+import { ColourVariant } from '../utils'
 import classNames from 'classnames'
 
 export type ProgressBarProps = {
