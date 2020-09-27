@@ -10,9 +10,9 @@ export type AlertProps = {
     /** choose a variant for the button */
     variant?: ColourVariant
     /** event to pass through to the close button. useful for conditionally rendering/closing the alert */
-    closeCallback: (e: React.MouseEvent<HTMLButtonElement>) => void
+    closeCallback?: (e: React.MouseEvent<HTMLButtonElement>) => void
     /** children to pass through to the alert */
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 export const Alert: React.FC<AlertProps> = (props) => {
@@ -30,7 +30,7 @@ export const Alert: React.FC<AlertProps> = (props) => {
             <span className="inline-block align-middle mr-8">{children}</span>
             <button
                 className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
-                onClick={(e) => closeCallback(e)}
+                onClick={(e) => closeCallback && closeCallback(e)}
             >
                 <span>×</span>
             </button>

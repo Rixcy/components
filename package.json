@@ -14,9 +14,7 @@
     "license": "MIT",
     "author": "Rixcy",
     "main": "dist/index.min.js",
-    "unpkg": "dist/index.iife.min.js",
     "module": "dist/index.esm.min.js",
-    "browser": "dist/index.iife.min.js",
     "types": "dist/index.d.ts",
     "typings": "dist/index.d.ts",
     "files": [
@@ -81,6 +79,9 @@
         "rollup-plugin-typescript2": "^0.27.3",
         "sort-package-json": "^1.46.0",
         "typescript": "^4.0.3"
+    },
+    "peerDependencies": {
+        "react": ">=16.8"
     },
     "publishConfig": {
         "access": "public",
