@@ -1,5 +1,6 @@
 export * from './Alert'
 export * from './Button'
+export * from './Label'
 export * from './Landing'
 export * from './Menu'
 export * from './Navbar'
