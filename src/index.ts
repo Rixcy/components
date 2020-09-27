@@ -1,6 +1,7 @@
 export * from './Alert'
 export * from './Button'
 export * from './Dashboard'
+export * from './Header'
 export * from './Hero'
 export * from './Image'
 export * from './Input'
