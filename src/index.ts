@@ -1,6 +1,7 @@
 export * from './Alert'
 export * from './Button'
-export * from './Dashboard'
+import * as Dashboard from './Dashboard'
+export { Dashboard }
 export * from './Dropdown'
 export * from './Footer'
 export * from './Header'
@@ -8,7 +9,8 @@ export * from './Hero'
 export * from './Image'
 export * from './Input'
 export * from './Label'
-export * from './Landing'
+import * as Landing from './Landing'
+export { Landing }
 export * from './Menu'
 export * from './Navbar'
 export * from './Pagination'
